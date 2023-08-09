@@ -7,6 +7,7 @@ import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
 import com.yedam.app.board.service.BoardService;
+import com.yedam.app.domain.BoardVO;
 
 import lombok.extern.slf4j.Slf4j;
 
@@ -23,5 +24,9 @@ public class BoardServiceTest {
 	@Test
 	public void getList() {
 		boardService.getList();
+		
+		BoardVO vo = new BoardVO();
+		vo.setContent("test¿‘¥œ¥Ÿ.");
+		boardService.insert(vo);
 	}
 }
